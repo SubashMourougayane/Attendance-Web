@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Tracker</title>
+     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="index.js"></script>
+   <style>
+body {
+    background-image: url("bg.jpg");
+}
+</style>
+
+
+</head>
+
+<body background="bg.jpg">
+
+<!-- Form Mixin-->
+<!-- Input Mixin-->
+<!-- Button Mixin-->
+<!-- Pen Title-->
+<div class="pen-title">
+  <h1><font color="#33B5E6">Attendance Tracker</font></h1>
+</div>
+<!-- Form Module-->
+<div class="module form-module">
+  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+
+  </div>
+  <div class="form">
+    <h2>Login to your account</h2>
+    <form action="index.js">
+      <input type="text" id="userid" placeholder="Username"/>
+      <input type="password" id="pass" placeholder="Password"/>
+      <button type="button" onclick="save()">Login</button>
+
+    </form>
+  </div>
+
+  <div class="cta"><a href="http://andytran.me">Forgot your password?</a></div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://codepen.io/andytran/pen/vLmRVp.js'></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDOc-2ozo1-v71-epu4dP2An3szW_OenTs",
+    authDomain: "attendance-79ba4.firebaseapp.com",
+    databaseURL: "https://attendance-79ba4.firebaseio.com",
+    projectId: "attendance-79ba4",
+    storageBucket: "attendance-79ba4.appspot.com",
+    messagingSenderId: "770641500584"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <script type="text/javascript" src="dash.js"></script>
+        
+        <title>
+            login
+        </title>
+    </head>
+    <body>
+        <center><h1>Enter your name</h1></center>
+        <form action="#">
+           Name:
+            <input type="text" id="staffname" /> 
+            <br />
+            <input type="button" value="proceed" onclick="dash()"/>
+            <input type="button" value="logut" onclick="logout()"/>
+
+
+        </form>
+
+        
+    </body>
+
+    <script>
+        function logout()
+        {
+            window.alert(sessionStorage.uname);
+            window.location = "login.html";
+        }
+    </script>
+</html>

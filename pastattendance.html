@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Tracker </title>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
+
+    <script>
+     window.onload= function(){
+     var text = sessionStorage.getItem("uname");
+     document.getElementById('tag').innerHTML = text;
+   }
+</script>
+<body>
+    <div id="wrapper">
+         <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i> <strong>A-TRACK</strong></a>
+
+		<div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+
+				  <li><a class="dropdown-button waves-effect waves-dark" href="#!" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b><span id="tag"></span></b> <i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </nav>
+		<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+</li>
+</ul>
+
+	   <!--/. NAV TOP  -->
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                   <li>
+                        <a  href="dash.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="dash2.html" class="waves-effect waves-dark"><i class="fa fa-desktop"></i>Classes</a>
+                    </li>
+					<li>
+                        <a href="subject.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i>Subjects</a>
+                    </li>
+                    <li>
+                        <a href="takeattendance.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i>New Attendance</a>
+                    </li>
+
+                    <li>
+                        <a href="pastattendance.html" class="active-menu waves-effect waves-dark"><i class="fa fa-table"></i>Past Attendance</a>
+                    </li>
+
+
+
+                   <li>
+                        <a href="form.html" class="waves-effect waves-dark"><i class="fa fa-edit"></i>Reports</a>
+                    </li>
+
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+		  <div class="header">
+                        <h1 class="page-header">
+                            Past Attendance
+                        </h1>
+
+
+		</div>
+
+            <div id="page-inner">
+
+			 <div class="row">
+			 <div class="col-lg-12">
+			 <div class="card">
+                        <div class="card-action">
+                            Enter the Date & Hour :
+                        </div>
+                        <div class="card-content">
+    <form class="col s12">
+
+       <div class="row">
+        <div class="input-field col s6">
+          <input  id="datee" type="date" class="validate">
+          <label for="first_name"></label>
+        </div>
+        <div class="input-field col s6">
+          <input id="hourr" type="text" class="validate" list="productName">
+             <datalist id="productName">
+    <option value="1"></option>
+    <option value="2"></option>
+	<option value="3"></option>
+    <option value="4"></option>
+    <option value="5"></option>
+    <option value="6"></option>
+    <option value="7"></option>
+    <option value="8"></option>
+    <option value="9"></option>
+    <option value="10"></option>
+
+
+</datalist>
+          <label for="last_name">Hour</label>
+        </div>
+      </div>
+
+        <a  onclick="view()" class="waves-effect waves-light btn">View Attendance</a>
+
+        <script>
+        function view()
+        {
+          var dat = document.getElementById("datee").value;
+          var hou = document.getElementById("hourr").value;
+          alert(dat);
+          alert(hou);
+        }
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+    </form>
+	<div class="clearBoth"></div>
+  </div>
+    </div>
+ </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+
+	<!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+
+	<script src="assets/materialize/js/materialize.min.js"></script>
+
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+
+
+	<script src="assets/js/easypiechart.js"></script>
+	<script src="assets/js/easypiechart-data.js"></script>
+
+	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+	<script>
+	$(document).ready(function(){
+	 $('ul.tabs').tabs();
+		$('.collapsible').collapsible({
+		  accordion: false, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+		  onOpen: function(el) { alert('Open'); }, // Callback for Collapsible open
+		  onClose: function(el) { alert('Closed'); } // Callback for Collapsible close
+		}
+	  );
+	});
+	</script>
+
+
+</body>
+
+</html>
