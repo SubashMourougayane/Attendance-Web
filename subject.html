@@ -29,7 +29,7 @@
            };
            firebase.initializeApp(config);
 
-            var ref = firebase.database().ref().child("ColgSubj").child(sessionStorage.CID).child(sessionStorage.uname);
+            var ref = firebase.database().ref().child(sessionStorage.CID).child("ColgSubj").child(sessionStorage.uname);
             console.log("lol IS "+ref);
             var i = 0;
             var j = 0;
@@ -69,7 +69,7 @@
 
             function ok()
             {
-              var ref = firebase.database().ref().child("ColgSubj").child(sessionStorage.CID).child(sessionStorage.uname);
+              var ref = firebase.database().ref().child(sessionStorage.CID).child("ColgSubj").child(sessionStorage.uname);
                var good=document.getElementById("classname").value;
                var good1=document.getElementById("subjectcode").value;
 

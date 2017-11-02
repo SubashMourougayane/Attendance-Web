@@ -1,0 +1,2 @@
+1.  proffessor name validation
+2.  load student list class list on every page rather than JSON stringify

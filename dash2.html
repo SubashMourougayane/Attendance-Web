@@ -12,43 +12,48 @@
    <script>
         window.onload = function ()
         {
+          var config = {
+            apiKey: "AIzaSyDOc-2ozo1-v71-epu4dP2An3szW_OenTs",
+            authDomain: "attendance-79ba4.firebaseapp.com",
+            databaseURL: "https://attendance-79ba4.firebaseio.com",
+            projectId: "attendance-79ba4",
+            storageBucket: "attendance-79ba4.appspot.com",
+            messagingSenderId: "770641500584"
+          };
+          firebase.initializeApp(config);
+            var iter = 0;
+            while (iter<=1)
+            {
+              iter++;
+              console.log("BOWW");
+              var text = sessionStorage.getItem("uname");
+              document.getElementById('tag').innerHTML = text;
 
-          console.log("BOWW");
-          var text = sessionStorage.getItem("uname");
-          document.getElementById('tag').innerHTML = text;
-
-           var config = {
-             apiKey: "AIzaSyDOc-2ozo1-v71-epu4dP2An3szW_OenTs",
-             authDomain: "attendance-79ba4.firebaseapp.com",
-             databaseURL: "https://attendance-79ba4.firebaseio.com",
-             projectId: "attendance-79ba4",
-             storageBucket: "attendance-79ba4.appspot.com",
-             messagingSenderId: "770641500584"
-           };
-           firebase.initializeApp(config);
-
-            var ref = firebase.database().ref().child(sessionStorage.CID).child("classes").child(text);
-            console.log("lol IS "+ref);
-            var i=0;
-            ref.once("value").then(function (snapshot) {
-                snapshot.forEach(function (childSnapshot) {
-                    var key = childSnapshot.key;
-                    list[i] = key;
-                    i++;
+                var ref = firebase.database().ref().child(sessionStorage.CID).child("classes").child(text);
+                alert("ref is "+ref);
+                console.log("lol IS "+ref);
+                var i=0;
+                ref.once("value").then(function (snapshot) {
+                    snapshot.forEach(function (childSnapshot) {
+                        var key = childSnapshot.key;
+                        list[i] = key;
+                        i++;
+                    });
+                    sessionStorage.setItem("stulist", JSON.stringify(list));
+                    console.log("list is "+JSON.stringify(list));
 
                 });
-                sessionStorage.setItem("stulist", JSON.stringify(list));
-                console.log("list is "+JSON.stringify(list));
-
-            });
             }
+
+        }
 
             function ok()
             {
-              var ref = firebase.database().ref().child(sessionStorage.CID);
+              var text = sessionStorage.getItem("uname");
+              var ref = firebase.database().ref().child(sessionStorage.CID).child("classes").child(text);
               var good=document.getElementById("classname").value;
-              alert(good);
-              alert(ref);
+              // alert(good);
+              // alert(ref);
               var data =
               {
                 clas: good
@@ -262,10 +267,10 @@
                                                      }
 
                                                      var ul = document.getElementById('cur_item');
-                                                     alert(ul);
+                                                    //  alert(ul);
                                                      ul.onclick = function(event) {
                                                          var target = getEventTarget(event);
-                                                         alert(target.innerHTML);
+                                                        //  alert(target.innerHTML);
                                                          sessionStorage.setItem('CurClass',target.innerHTML);
                                                          window.location.assign("Stulist.html");
                                                      };
