@@ -22,7 +22,7 @@
         };
         firebase.initializeApp(config);
       var len = JSON.parse(sessionStorage.getItem("studlist"));
-      console.log("LENNNNN "+len.length);
+      // console.log("LENNNNN "+len.length);
       var atval = 0;
       var k=1;
         for(var i = 0; i<len.length;i++)
@@ -30,7 +30,7 @@
           if(document.getElementById("test1"+k).checked)
           {
             // state = "Present";
-            alert("LOL"+len[i]+" is PRESNET");
+            // alert("LOL"+len[i]+" is PRESNET");
             Attlist[atval] = "Present";
             atval++;
             k++;
@@ -59,7 +59,7 @@
           }
         }
 
-        console.log("ATT LIS IS "+Attlist);
+        // console.log("ATT LIS IS "+Attlist);
         var node = sessionStorage.getItem("nodee");
         console.log("WTF NODE"+node);
         var ref = firebase.database().ref().child("Attendance").child(sessionStorage.CID);
